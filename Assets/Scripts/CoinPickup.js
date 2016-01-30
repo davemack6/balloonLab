@@ -1,13 +1,13 @@
 #pragma strict
 
 public var value:int=1;
-//public var collectEffect:GameObject;
+public var collectEffect:GameObject;
 
 function OnTriggerEnter(other:Collider){
 	var balloon=other.transform.GetComponent(Balloon);
 	if(balloon){
 		Destroy(gameObject);
-		//if(collectEffect) Instantiate(collectEffect,transform.position,transform.rotation);
+		if(collectEffect) Instantiate(collectEffect,transform.position,transform.rotation);
 		balloon.AddScore(value);
 	}
 }
